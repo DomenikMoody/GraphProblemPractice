@@ -1,15 +1,23 @@
 function getNeighbors(row, col, graph) {
-
+let coors = [];
   // Check top
-
+if (row > 0 && graph[row - 1][col] === 1){
+  coors.push([row -1 , col])
+}
   // Check bottom
-
+if (row < graph.length - 1 && graph[row + 1][col] === 1){
+  coors.push([row + 1, col])
+}
   // Check left
-
+if (col > 0 && graph[row][col - 1] === 1){
+  coors.push([row, col - 1])
+}
   // Check right
-
+if (col < graph[row].length && graph[row][col + 1] === 1){
+  coors.push([row, col + 1])
+}
   // Return neighbors
-
+return coors
   // Your code here
 }
 
